@@ -13,7 +13,7 @@ const app = express()
 // application level middlewares
 app.use(cors())
 app.use(express.json())
-app.use("/", async (req, res) => {
+app.get("/", async (req, res) => {
   return res.status(200).send({
     status: true,
     message: "This domain's API managed by @hemantmewada"

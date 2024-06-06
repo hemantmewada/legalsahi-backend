@@ -1,5 +1,5 @@
 const sendMail = require("../helpers/sendMail");
-const enquiryModel = require("../models/EnquiryModel");
+const enquiryModel = require("../models/enquiryModel");
 const { mailHTML2 } = require("../utils/mailHTML");
 
 const enquiryController = async (req, res) => {

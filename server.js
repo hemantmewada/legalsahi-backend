@@ -3,9 +3,7 @@ const config = require('./config/config')
 const colors = require("colors");
 const cors = require("cors");
 const mongoConnect = require('./config/db');
-const sendMail = require('./helpers/sendMail');
-const { mailHTML2 } = require('./utils/mailHTML');
-const enquiryRouter = require('./routes/EnquiryRouter');
+const enquiryRouter = require('./routes/enquiryRouter');
 
 const PORT = config.PORT || 3000;
 
@@ -13,6 +11,7 @@ const app = express()
 // application level middlewares
 app.use(cors())
 app.use(express.json())
+
 app.get("/", async (req, res) => {
   return res.status(200).send({
     status: true,

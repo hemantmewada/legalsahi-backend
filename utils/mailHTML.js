@@ -1,3 +1,5 @@
+const { primaryColor } = require("../config/const");
+
 function mailHTML() {
     return `
     <html lang="en">
@@ -144,7 +146,7 @@ function mailHTML() {
     `;
 }
 
-function mailHTML2(name, email, phone, message) {
+function mailHTML2(name, email, contact, relatedTo, enquiryFor) {
     return `
         <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
         <html xmlns="http://www.w3.org/1999/xhtml" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
@@ -269,15 +271,15 @@ function mailHTML2(name, email, phone, message) {
                                                 font-weight: 500;
                                                 text-align: center;
                                                 border-radius: 3px 3px 0 0;
-                                                background-color: #ff9f00;
+                                                background-color: ${primaryColor};
                                                 margin: 0;
                                                 padding: 20px;
                                             "
                                             align="center"
-                                            bgcolor="#FF9F00"
+                                            bgcolor="${primaryColor}"
                                             valign="top"
                                         >
-                                            Enquiry Received !!
+                                            ${enquiryFor} Enquiry Received !!
                                         </td>
                                     </tr>
                                     <tr style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
@@ -307,7 +309,7 @@ function mailHTML2(name, email, phone, message) {
                                                             font-weight: 700;
                                                         "
                                                         valign="top"
-                                                        align="center"
+                                                        align="left"
                                                         width="50%"
                                                     >
                                                         Name
@@ -325,7 +327,7 @@ function mailHTML2(name, email, phone, message) {
                                                             margin: 0;
                                                             padding: 5px 0;
                                                         "
-                                                        align="center"
+                                                        align="left"
                                                         valign="top"
                                                     >
                                                         ${name}
@@ -347,7 +349,7 @@ function mailHTML2(name, email, phone, message) {
                                                             font-weight: 700;
                                                         "
                                                         valign="top"
-                                                        align="center"
+                                                        align="left"
                                                         width="50%"
                                                     >
                                                         Email
@@ -365,7 +367,7 @@ function mailHTML2(name, email, phone, message) {
                                                             margin: 0;
                                                             padding: 5px 0;
                                                         "
-                                                        align="center"
+                                                        align="left"
                                                         valign="top"
                                                     >
                                                         ${email}
@@ -387,10 +389,10 @@ function mailHTML2(name, email, phone, message) {
                                                             font-weight: 700;
                                                         "
                                                         valign="top"
-                                                        align="center"
+                                                        align="left"
                                                         width="50%"
                                                     >
-                                                        Phone
+                                                        Contact
                                                     </td>
                                                     <td
                                                         class="alignleft"
@@ -405,10 +407,10 @@ function mailHTML2(name, email, phone, message) {
                                                             margin: 0;
                                                             padding: 5px 0;
                                                         "
-                                                        align="center"
+                                                        align="left"
                                                         valign="top"
                                                     >
-                                                        <a href="tel:${phone}">${phone}</a>
+                                                        <a href="tel:${contact}">${contact}</a>
                                                     </td>
                                                 </tr>
 
@@ -427,10 +429,10 @@ function mailHTML2(name, email, phone, message) {
                                                             font-weight: 700;
                                                         "
                                                         valign="top"
-                                                        align="center"
+                                                        align="left"
                                                         width="50%"
                                                     >
-                                                        Message
+                                                        Related To
                                                     </td>
                                                     <td
                                                         class="alignleft"
@@ -445,10 +447,10 @@ function mailHTML2(name, email, phone, message) {
                                                             margin: 0;
                                                             padding: 5px 0;
                                                         "
-                                                        align="center"
+                                                        align="left"
                                                         valign="top"
                                                     >
-                                                        ${message}
+                                                        ${relatedTo}
                                                     </td>
                                                 </tr>
 
@@ -476,9 +478,7 @@ function mailHTML2(name, email, phone, message) {
                                                 align="center"
                                                 valign="top"
                                             >
-                                                <a href="https://www.legalsathi.in/" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 12px; color: #999; text-decoration: underline; margin: 0;">
-                                                    legalsahi
-                                                </a>
+                                                <img src="https://legalsathi-frontend.vercel.app/images/legalsathi-logo.jpg" width="50%" alt="legalsathi image" />
                                             </td>
                                         </tr>
                                     </table>
